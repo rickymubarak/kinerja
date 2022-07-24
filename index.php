@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="fContainer">
-        <div class="wrapper">
+        <div class="box-login">
             <form action="home.php" method="get">
                 <label class="login">Login</label><br>
                 <label>Username</label><br>
