@@ -22,10 +22,10 @@
         <div class="navbar">
             <h3>LAPORAN KINERJA</h3>
             <ul>
-                <li><a href="">Dashboard</a></li>
+                <li><a href="../home.php">Dashboard</a></li>
                 <li><a href="" class="aktive">Profile</a></li>
                 <li><a href="Halaman/laporan.php">Laporan Kinerja</a></li>
-                <li><a href="">Rekapan Produktivitas</a></li>
+                <li><a href="#">Rekapan Produktivitas</a></li>
             </ul>
         </div>    
     </section>

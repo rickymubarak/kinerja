@@ -1,4 +1,11 @@
 <?php
+	// koneksi database
+	$server = "localhost";
+	$user	= "root";
+	$pass	= "";
+	$database	= "e-kinerja";
+	$koneksi	= mysqli_connect($server, $user, $pass, $database) or die(mysqli_error($koneksi));
+
 ?>
 
 <!DOCTYPE html>
@@ -8,23 +15,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Style dari bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <!-- Css Custome -->
     <link rel="stylesheet" href="plugin/style.css">
 </head>
-<body>
+
 	<?php
         include "navbar.php"
     ?>
+<body>
 
-	<div class="tkonten">
-		<table>
-			<tr>
-				<th style="border: 1px solid black;text-align: center; padding: 1rem;">Bulan</th>
-				<th style="border: 1px solid black;text-align: center;">Capaian Kinerja</th>
-				<th style="border: 1px solid black;text-align: center;">Edit</th>
-			</tr>
-		</table>
+<div class="container-md">
+	<h1 class="text-center">LAPORAN CAPAIAN KINERJA ASN PEMERINTAH KOTA PONTIANAK</h1>
+	<h2 class="text-center">BADAN KEPEGAWAIAN DAN PENGEMBAGAN SUMBER DAYA MANUSIA</h2>
+
+<!-- Card Input -->
+	<div class="card mt-5">
+		<div class="card-header bg-primary text-white text-center">
+	    	Input Data Rencana Kinerja Pegawai
+	  	</div>
+	  	<div class="card-body">
+	   		<form method="post" action="">
+	   			<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">NIP</label>
+					<input type="text" name="tnip" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP tanpa spasi !" required>
+				</div>
+	   			<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Nama</label>
+					<input type="text" name="tname" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Jabatan</label>
+					<input type="text" name="tjabatan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Unit Kerja</label>
+					<select class="form-select" aria-label="Default select example" name="topd" required>
+						<option selected>Pilih Instansi</option>
+						<option value="1">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA</option>
+						<option value="2">SEKRETARIAT DAERAH</option>
+						<option value="3">INSPEKTORAT</option>
+						<option value="4">BADAN PERENCANAAN PEMBANGUNAN DAERAH</option>
+						<option value="5">SATUAN POLISI PAMONG PRAJA</option>
+						<option value="6">DINAS KOMUNIKASI DAN INFORMATIKA</option>
+						<option value="7">DINAS PENGENDALIAN PENDUDUKAN, KELUARGA BERENCANA, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">NIP ATASAN LANGSUNG</label>
+					<input type="text" name="tnipatasan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP Atasan tanpa spasi !" required>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Nama Atasan</label>
+					<input type="text" name="tnameatasan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama Atasan" required>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Laporan Kinerja</label>
+					<input type="text" name="tlaporankinerja" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Capaian Kinerja" required>
+				</div>
+				<button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
+				<button type="reset" class="btn btn-danger" name="breset">Kosongkan Halaman</button>
+	   		</form>
+	  	</div>
 	</div>
+<!-- Akhir Card Input -->
+
+<!-- Card Tabel -->
+	<div class="card mt-5">
+		<div class="card-header bg-success  text-white text-center">
+	    	Rekapan Laporan Kinerja
+	  	</div>
+	  	<div class="card-body">
+	   		<table class="table table-bordered">
+	   			<tr class="text-center">
+	   				<th>No</th>
+	   				<th>NIP</th>
+	   				<th>Nama</th>
+	   				<th>Jabatan</th>
+	   				<th>Unit Kerja</th>
+	   				<th>NIP Atasan Langsung</th>
+	   				<th>Nama Atasan Langsung</th>
+	   				<th>Laporan Kinerja Bulanan</th>
+	   				<th>Persentase Capaian Kinerja (%)</th>
+	   			</tr>
+
+	   			<?php
+	   				$no = 1;
+	   				$tampil = mysqli_query($koneksi, "SELECT *  from tabel_lapkinerja order by id desc");
+	   				while ($data = mysqli_fetch_array($tampil)) : 
+	   				
+	   			?>
+	   			<tr class="text-center">
+	   				<td><?=$no++;?></td>
+	   				<td><?=$data['NIP']?></td>
+	   				<td><?=$data['tname']?></td>
+	   				<td><?=$data['tjabatan']?></td>
+	   				<td><?=$data['topd']?></td>
+	   				<td><?=$data['tnipatasan']?></td>
+	   				<td><?=$data['tnameatasan']?></td>
+	   				<td><?=$data['tlaporankinerja']?></td>
+	   				<td bgcolor="YELLOW"><?=$data['tpersen']?></td>
+	   			</tr>
+	   			<?php endwhile; ?>
+	   		</table>
+	  	</div>
+	</div>
+<!-- Akhir Card Tabel -->
+
+</div>
+
+<!-- Js boostrp 5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
+<footer>
+	<div class="p-3"></div>
+	<?php
+		include 'footer.php'
+	?>
+</footer>
