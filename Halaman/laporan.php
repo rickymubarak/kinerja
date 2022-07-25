@@ -1,11 +1,33 @@
 <?php
 	// koneksi database
-	$server = "localhost";
-	$user	= "root";
-	$pass	= "";
-	$database	= "e-kinerja";
-	$koneksi	= mysqli_connect($server, $user, $pass, $database) or die(mysqli_error($koneksi));
+	include '../Plugin/koneksi.php';
+	if (isset($_GET['hal'])) {
+		if ($_GET['hal'] == "edit") {
+			$tampil = mysqli_query($koneksi, "SELECT * from tabel_lapkinerja where id = '$_GET[id]'");
+			$data = mysqli_fetch_array($tampil);
+			if ($data) {
+				$vnip 		= $data['NIP'];
+				$vnama		= $data['tname'];
+				$vjabatan	= $data['tjabatan'];
+				$vopd		= $data['topd'];
+				$vnipatasan	= $data['tnipatasan'];
+				$vnamaatasan= $data['tnameatasan'];
+				$vlaporankinerja= $data['tlaporankinerja'];
+			}
+		}
+		else {
+			if ($_GET['hal'] == "hapus") {
+				$hapus = mysqli_query($koneksi, "DELETE from tabel_lapkinerja where id = '$_GET[id]' ");
+				if ($hapus) {
+					echo "	<script>
+								alert('Hapus Data Berhasil!!');
+								document.location='laporan.php';
+							</script>";
+				}
+			}
+		}
 
+	}
 ?>
 
 <!DOCTYPE html>
@@ -27,33 +49,37 @@
 <body>
 
 <div class="container-md">
-	<h1 class="text-center">LAPORAN CAPAIAN KINERJA ASN PEMERINTAH KOTA PONTIANAK</h1>
-	<h2 class="text-center">BADAN KEPEGAWAIAN DAN PENGEMBAGAN SUMBER DAYA MANUSIA</h2>
+	<h1 class="text-center mt-3">LAPORAN CAPAIAN KINERJA ASN PEMERINTAH KOTA PONTIANAK</h1>
+	<!-- <h2 class="text-center mt-2">BADAN KEPEGAWAIAN DAN PENGEMBAGAN SUMBER DAYA MANUSIA</h2> -->
 
 <!-- Card Input -->
+<?php
+// masukan data
+include'tambah.php';
+?>
 	<div class="card mt-5">
 		<div class="card-header bg-primary text-white text-center">
-	    	Input Data Rencana Kinerja Pegawai
+	    	Input Data Capaian Kinerja Pegawai
 	  	</div>
 	  	<div class="card-body">
 	   		<form method="post" action="">
 	   			<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">NIP</label>
-					<input type="text" name="tnip" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP tanpa spasi !" required>
+					<input type="text" name="tnip" value="<?=@$vnip?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP tanpa spasi !" required>
 				</div>
 	   			<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">Nama</label>
-					<input type="text" name="tname" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
+					<input type="text" name="tname" value="<?=@$vnama?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
 				</div>
 				<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">Jabatan</label>
-					<input type="text" name="tjabatan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
+					<input type="text" name="tjabatan" value="<?=@$vjabatan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Jabatan" required>
 				</div>
 				<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">Unit Kerja</label>
 					<select class="form-select" aria-label="Default select example" name="topd" required>
 						<option selected>Pilih Instansi</option>
-						<option value="1">BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA</option>
+						<option value="<?=@$vopd?>"><?=@$vopd?></option>
 						<option value="2">SEKRETARIAT DAERAH</option>
 						<option value="3">INSPEKTORAT</option>
 						<option value="4">BADAN PERENCANAAN PEMBANGUNAN DAERAH</option>
@@ -64,15 +90,15 @@
 				</div>
 				<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">NIP ATASAN LANGSUNG</label>
-					<input type="text" name="tnipatasan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP Atasan tanpa spasi !" required>
+					<input type="text" name="tnipatasan" value="<?=@$vnipatasan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP Atasan tanpa spasi !" required>
 				</div>
 				<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">Nama Atasan</label>
-					<input type="text" name="tnameatasan" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama Atasan" required>
+					<input type="text" name="tnameatasan" value="<?=@$vnamaatasan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama Atasan" required>
 				</div>
 				<div class="mb-3">
 					<label for="exampleFormControlInput1" class="form-label">Laporan Kinerja</label>
-					<input type="text" name="tlaporankinerja" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Capaian Kinerja" required>
+					<input type="text" name="tlaporankinerja" value="<?=@$vlaporankinerja?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Capaian Kinerja" required>
 				</div>
 				<button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
 				<button type="reset" class="btn btn-danger" name="breset">Kosongkan Halaman</button>
@@ -84,7 +110,7 @@
 <!-- Card Tabel -->
 	<div class="card mt-5">
 		<div class="card-header bg-success  text-white text-center">
-	    	Rekapan Laporan Kinerja
+	    	Rekapan Laporan Kinerja (Bulan)
 	  	</div>
 	  	<div class="card-body">
 	   		<table class="table table-bordered">
@@ -98,6 +124,7 @@
 	   				<th>Nama Atasan Langsung</th>
 	   				<th>Laporan Kinerja Bulanan</th>
 	   				<th>Persentase Capaian Kinerja (%)</th>
+	   				<th>Aksi</th>
 	   			</tr>
 
 	   			<?php
@@ -115,7 +142,11 @@
 	   				<td><?=$data['tnipatasan']?></td>
 	   				<td><?=$data['tnameatasan']?></td>
 	   				<td><?=$data['tlaporankinerja']?></td>
-	   				<td bgcolor="YELLOW"><?=$data['tpersen']?></td>
+	   				<td><?=$data['tpersen']?></td>
+	   				<td>
+	   					<a href="laporan.php?hal=edit&id=<?=$data['id']?>" class="btn btn-warning">Ubah</a>
+	   					<a href="laporan.php?hal=hapus&id=<?=$data['id']?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?)" class="btn btn-danger">Hapus</a>
+	   				</td>
 	   			</tr>
 	   			<?php endwhile; ?>
 	   		</table>
