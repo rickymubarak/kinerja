@@ -1,19 +1,23 @@
 <?php
 	// koneksi database
 	include '../Plugin/koneksi.php';
+
+	// edit dan hapus
 	if (isset($_GET['hal'])) {
 		if ($_GET['hal'] == "edit") {
 			$tampil = mysqli_query($koneksi, "SELECT * from tabel_lapkinerja where id = '$_GET[id]'");
 			$data = mysqli_fetch_array($tampil);
 			if ($data) {
-				$vnip 			= $data['NIP'];
-				$vnama			= $data['tname'];
-				$vjabatan		= $data['tjabatan'];
-				$vopd			= $data['topd'];
-				$vnipatasan		= $data['tnipatasan'];
-				$vnamaatasan	= $data['tnameatasan'];
-				$vlaporankinerja= $data['tlaporankinerja'];
-				$vtargetlaporan	= $data['targetlaporan'];
+				$vnip 		= $data['NIP'];
+				$vnama		= $data['tname'];
+				$vjabatan	= $data['tjabatan'];
+				$vopd		= $data['topd'];
+				$vnipatasan	= $data['tnipatasan'];
+				$vnamaatasan= $data['tnameatasan'];
+				$vrencana	= $data['trencana'];
+				$vtarget	= $data['ttarget'];
+				$vsatuan	= $data['tsatuan'];
+				$vwaktu		= $data['twaktu'];
 			}
 		}
 		else {
@@ -51,15 +55,15 @@
 ?>
 
 <div class="container-md">
-
+	
 <!-- Card Input -->
 <?php
 // masukan data
-include'tambah.php';
+include "input-rencana.php";
 ?>
 	<div class="card mt-5">
 		<div class="card-header bg-primary text-white text-center">
-	    	Input Data Capaian Kinerja Pegawai
+	    	Input Rencana Kinerja Pegawai
 	  	</div>
 	  	<div class="card-body">
 	   		<form method="post" action="">
@@ -97,12 +101,25 @@ include'tambah.php';
 					<input type="text" name="tnameatasan" value="<?=@$vnamaatasan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama Atasan" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label textUbah">Laporan Kinerja</label>
-					<input type="text" name="tlaporankinerja" value="<?=@$vlaporankinerja?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Capaian Kinerja" required>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Rencana Kinerja</label>
+					<input type="text" name="trencana" value="<?=@$vrencana?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Rencana Kinerja" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label textUbah">Jumlah</label>
-					<input type="text" name="ttargetlaporan" value="<?=@$vtargetlaporan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Jumlah" required>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Target</label>
+					<input type="text" name="ttarget" value="<?=@$vtarget?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Jumlah Output" required>
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label textUbah">Satuan</label>
+					<input type="text" name="tsatuan" value="<?=@$vsatuan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Output Rencana Kinerja" required>
+				</div>
+				<div class="row g-3 align-item-center mb-3">
+					<label for="exampleFormControlInput1" class="form-label textUbah">Waktu (Bulan)</label>
+					<div class="col-auto mt-0">
+						<input type="text" name="twaktu" value="<?=@$vwaktu?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan angka" required>
+					</div>
+					<div class="col-auto mt-0">
+						<span class="form-text">BULAN</span>
+					</div>
 				</div>
 				<button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
 				<button type="reset" class="btn btn-danger" name="breset">Kosongkan Halaman</button>
@@ -124,11 +141,11 @@ include'tambah.php';
 	   				<th>Nama</th>
 	   				<th>Jabatan</th>
 	   				<th>Unit Kerja</th>
+	   				<th>NIP Atasan Langsung</th>
+	   				<th>Nama Atasan Langsung</th>
 	   				<th>Rencana Kinerja</th>
 	   				<th>Target Waktu (Bulan)</th>
-	   				<th>Laporan Kinerja Bulanan</th>
 	   				<th>Status</th>
-	   				<th>Persentase Capaian Kinerja (%)</th>
 	   				<th>Aksi</th>
 	   			</tr>
 
@@ -144,9 +161,10 @@ include'tambah.php';
 	   				<td><?=$data['tname']?></td>
 	   				<td><?=$data['tjabatan']?></td>
 	   				<td><?=$data['topd']?></td>
+	   				<td><?=$data['tnipatasan']?></td>
+	   				<td><?=$data['tnameatasan']?></td>
 	   				<td><?=$data['target']?><br><?=$data['satuan']?><br><?=$data['rencana']?></td>
 	   				<td><?=$data['waktu']?><br>Bulan</td>
-	   				<td><?=$data['targetlaporan']?><br><?=$data['tlaporankinerja']?></td>
 	   				<td><label class="btn 
 	   					<?php if ($data['status'] == 1) {
 	   						echo 'btn-success';
@@ -168,14 +186,6 @@ include'tambah.php';
 	   								} 
 	   					?>
 	   					</label></td>
-	   				<td><?php
-	   						$rencana 	= $data['target'];
-	   						$realisasi	= $data['targetlaporan'];
-	   						$persen		= ($realisasi / $rencana) * 100;
-	   	
-	   						echo $persen; echo ' %';
-	   					?>
-	   				</td>
 	   				<td>
 	   					<a href="laporan.php?hal=edit&id=<?=$data['id']?>" class="btn btn-warning mb-2">Ubah</a>
 	   					<a href="laporan.php?hal=hapus&id=<?=$data['id']?>" onclick="return confirm('Apakah yakin ingin menghapus data ini?)" class="btn btn-danger">Hapus</a>

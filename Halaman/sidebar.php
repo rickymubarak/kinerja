@@ -67,18 +67,18 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Laporan Kinerja</span> </a>
+            <div> <a href="home.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Laporan Kinerja</span> </a>
                 <div class="nav_list"> 
-                    <a href="#" class="nav_link active"> 
+                    <a href="../home.php" class="nav_link active"> 
                         <i class='bx bx-grid-alt nav_icon'></i> 
                         <span class="nav_name">Home</span> </a> 
                     <a href="#" class="nav_link"> 
                         <i class='bx bx-user nav_icon'></i> 
-                        <span class="nav_name">Profile</span> </a> 
-                    <a href="#" class="nav_link"> 
+                        <span class="nav_name">Rencana</span> </a> 
+                    <a href="Halaman/laporan.php" class="nav_link"> 
                         <i class='bx bx-message-square-detail nav_icon'></i> 
                         <span class="nav_name">Laporan</span> </a> 
-                    <a href="#" class="nav_link">   
+                    <a href="Halaman/validasi.php" class="nav_link">   
                         <i class='bx bx-bookmark nav_icon'></i> 
                         <span class="nav_name">Rekapan</span> </a>  
                 </div>

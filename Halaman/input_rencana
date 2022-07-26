@@ -14,8 +14,10 @@
 											topd 			= '$_POST[topd]',
 											tnipatasan 		= '$_POST[tnipatasan]',
 											tnameatasan 	= '$_POST[tnameatasan]',
-											tlaporankinerja = '$_POST[tlaporankinerja]',
-											targetlaporan 	= '$_POST[ttargetlaporan]'
+											rencana 	= '$_POST[trencana]',
+											target 	= '$_POST[ttarget]',
+											satuan 	= '$_POST[tsatuan]',
+											waktu = '$_POST[twaktu]'
 											where id = '$_GET[id]'
 											");
 
@@ -23,43 +25,45 @@
 			{
 				echo "<script>
 						alert('Edit data Berhasil!');
-						document.location='laporan.php';
+						document.location='rencana.php';
 					</script>";
 			}
 			else
 			{
 				echo "<script>
 						alert('Edit data Gagal!');
-						document.location='laporan.php';
+						document.location='rencana.php';
 					</script>";
 			}
 
 		} else
 		{
 			//Data akan di simpan
-			$simpan = mysqli_query($koneksi,"INSERT into tabel_lapkinerja (NIP, tname, tjabatan, topd, tnipatasan, tnameatasan, tlaporankinerja, targetlaporan) 
+			$simpan = mysqli_query($koneksi,"INSERT into tabel_lapkinerja (NIP, tname, tjabatan, topd, tnipatasan, tnameatasan, rencana, target, satuan, waktu) 
 										values 	('$_POST[tnip]',
 												'$_POST[tname]',
 												'$_POST[tjabatan]',
 												'$_POST[topd]',
 												'$_POST[tnipatasan]',
 												'$_POST[tnameatasan]',
-												'$_POST[tlaporankinerja]',
-												'$_POST[ttargetlaporan]')
+												'$_POST[trencana]',
+												'$_POST[ttarget]',
+												'$_POST[tsatuan]',
+												'$_POST[twaktu]')
 										");
 
 			if ($simpan) 
 			{
 				echo "<script>
 						alert('Simpan data Berhasil!');
-						document.location='laporan.php';
+						document.location='rencana.php';
 					</script>";
 			}
 			else
 			{
 				echo "<script>
 						alert('Simpan data Gagal!');
-						document.location='laporan.php';
+						document.location='rencana.php';
 					</script>";
 			}
 		}

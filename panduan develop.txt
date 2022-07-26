@@ -1,0 +1,10 @@
+next develop
+
+1. persentase capaian (output) - > sudah
+	rules
+	-masukan target 1 bulan
+	-jumlah laporan dalam 1 bulan
+- buat kondisi jika tervalidasi baru persentasenya muncul
+- bulatkan 2 angka di belakang koma
+
+2. buat data realtime atau buat tombol refresh
