@@ -19,13 +19,13 @@
 
     <!-- Halaman navbar -->
     <?php
-        include "Halaman/navbar.php"
+        include "Halaman/sidebar.php"
     ?>
 
     <!-- akhir halaman navbar -->
 
     <!-- halaman konten -->
-    <div class="fContainer">
+    <div id="content">
         <h1>InI HOME</h1>
             <div>
                 <button onclick="history.go(-1);">Back</button>

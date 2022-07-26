@@ -43,13 +43,14 @@
     <link rel="stylesheet" href="plugin/style.css">
 </head>
 
-	<?php
-        include "navbar.php"
-    ?>
 <body>
 
+<?php
+    include "sidebar.php"
+?>
+
 <div class="container-md">
-	<h1 class="text-center mt-3">LAPORAN CAPAIAN KINERJA ASN PEMERINTAH KOTA PONTIANAK</h1>
+	<!-- <h1 class="text-center mt-3">LAPORAN CAPAIAN KINERJA ASN PEMERINTAH KOTA PONTIANAK</h1> -->
 	<!-- <h2 class="text-center mt-2">BADAN KEPEGAWAIAN DAN PENGEMBAGAN SUMBER DAYA MANUSIA</h2> -->
 
 <!-- Card Input -->
@@ -64,22 +65,22 @@ include'tambah.php';
 	  	<div class="card-body">
 	   		<form method="post" action="">
 	   			<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">NIP</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">nip</label>
 					<input type="text" name="tnip" value="<?=@$vnip?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP tanpa spasi !" required>
 				</div>
 	   			<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Nama</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Nama</label>
 					<input type="text" name="tname" value="<?=@$vnama?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Jabatan</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Jabatan</label>
 					<input type="text" name="tjabatan" value="<?=@$vjabatan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Jabatan" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Unit Kerja</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Unit Kerja</label>
 					<select class="form-select" aria-label="Default select example" name="topd" required>
 						<option selected>Pilih Instansi</option>
-						<option value="<?=@$vopd?>"><?=@$vopd?></option>
+						<option value="<?=@$vopd?>"><?=@$vopd?>BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA</option>
 						<option value="2">SEKRETARIAT DAERAH</option>
 						<option value="3">INSPEKTORAT</option>
 						<option value="4">BADAN PERENCANAAN PEMBANGUNAN DAERAH</option>
@@ -89,15 +90,15 @@ include'tambah.php';
 					</select>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">NIP ATASAN LANGSUNG</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">nip atasan langsung</label>
 					<input type="text" name="tnipatasan" value="<?=@$vnipatasan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan NIP Atasan tanpa spasi !" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Nama Atasan</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Nama Atasan</label>
 					<input type="text" name="tnameatasan" value="<?=@$vnamaatasan?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Nama Atasan" required>
 				</div>
 				<div class="mb-3">
-					<label for="exampleFormControlInput1" class="form-label">Laporan Kinerja</label>
+					<label for="exampleFormControlInput1" class="form-label textUbah">Laporan Kinerja</label>
 					<input type="text" name="tlaporankinerja" value="<?=@$vlaporankinerja?>" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Capaian Kinerja" required>
 				</div>
 				<button type="submit" class="btn btn-success" name="bsimpan">Simpan</button>
