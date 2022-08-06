@@ -24,4 +24,10 @@ class RencanaController extends Controller
         T_Rencana::create($request->except(['_token','submit']));
         return redirect('/rencana');
     }
+
+    public function edit($id)
+    {
+        $rencana = T_Rencana::find($id);
+        return view('rencana.edit', compact(['rencana']));
+    }
 }

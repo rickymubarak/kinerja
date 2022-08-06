@@ -39,7 +39,10 @@
 
                         <div class="form-group">
                         <label for="NIP">NIP</label>
-                        <input type="text" name="nip" placeholder="Masukan NIP tanpa spasi !" required class="form-control">
+                        <input type="number" class="form-control" name="nip" placeholder="Masukan NIP tanpa spasi !!" required 
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            type = "number"
+                            maxlength = "18">
                         </div>
                         
                         <div class="form-group">
@@ -54,12 +57,17 @@
 
                         <div class="form-group">
                             <label for="target">TARGET</label>
-                            <input type="number" name="target"  required class="form-control">
+                            <input type="number" name="target" placeholder="masukan jumlah target" required class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="hasil">Output / Hasil</label>
-                            <input type="text" name="hasil" placeholder="dapat berbentuk laporan" required class="form-control">
+                            <select type='number' class="form-control" name="hasil" required aria-label=".form-select-sm example">
+                                <option selected>-</option>
+                                <option value="1">LAPORAN</option>
+                                <option value="2">DOKUMEN</option>
+                                <option value="3">DATA</option>
+                            </select>
                         </div>
 
                         <div class="row">
@@ -67,7 +75,7 @@
                                 <div class="form-group">
                                     <label for="target">WAKTU (Bulan)</label>
                                     <div class="input-group">
-                                        <input type="number" name="waktu" min="1" max="12" required class="form-control">
+                                        <input type="number" name="waktu" min="1" max="12" placeholder="maximal 12 Bulan" required class="form-control">
                                         <div class="col-sm-4">
                                             <label for="" >Bulan</label>
                                         </div>

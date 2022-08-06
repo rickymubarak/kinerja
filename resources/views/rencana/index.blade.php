@@ -29,6 +29,7 @@
                         <th>Hasil</th>
                         <th>Waktu</th>
                         <th>Status</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,8 +42,8 @@
                         <td>{{ $r->nama }}</td>
                         <td>{{ $r->rencana }}</td>
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
-                        <td>{{ $r->waktu }}</td>
-                        <td></th>
+                        <td>{{ $r->waktu }}<br> Bulan</td>
+                        <td><a href="/rencana/{{ $r->id }}/edit/">EDIT</a></td>
                     </tr>
 
                 @endforeach

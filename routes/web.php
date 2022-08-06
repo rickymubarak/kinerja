@@ -23,3 +23,4 @@ Route::any('/', function() {
 Route::any('/rencana', [RencanaController::class,'index']);
 Route::any('/rencana/create', [RencanaController::class,'create']);
 Route::any('/rencana/store', [RencanaController::class,'store']);
+Route::get('/rencana/{ id }/edit/', [RencanaController::class,'edit']);
