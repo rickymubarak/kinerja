@@ -33,40 +33,61 @@
                     <div id="nav-tab-card" class="tab-pane fade show active">
                     <p class="alert alert-success">Some text success or error</p>
                     
-                    <form role="form" action="/rencana/store" method="POST">
+                    <form role="form" action="/rencana/{{ $rencana->id }}" method="POST">
 
+                        @method('put')
                         @csrf
 
                         <div class="form-group">
                         <label for="NIP">NIP</label>
-                        <input name="nip" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        <input name="nip" value="{{ $rencana->nip }}" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                         type = "number"
                         maxlength = "18" placeholder="Masukan NIP tanpa spasi !" required class="form-control">
                         </div>
                         
                         <div class="form-group">
                             <label for="nama">NAMA</label>
-                            <input type="text" name="nama" placeholder="Masukan Nama Anda" required class="form-control">
+                            <input type="text" name="nama" value="{{ $rencana->nama }}" placeholder="Masukan Nama Anda" required class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="rencana">RENCANA</label>
-                            <input type="text" name="rencana" placeholder="Masukkan Rencana Kinerja" required class="form-control">
+                            <input type="text" name="rencana" value="{{ $rencana->rencana }}" placeholder="Masukkan Rencana Kinerja" required class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="target">TARGET</label>
-                            <input type="number" name="target" min="1"  required class="form-control">
+                            <input type="number" name="target" value="{{ $rencana->target }}" min="1"  required class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label for="hasil">Output / Hasil</label>
                             <select class="form-control" type="text" name="hasil" required>
                                 <option value="">-</option>
-                                <option value="LAPORAN">LAPORAN</option>
-                                <option value="DOKUMEN">DOKUMEN</option>
-                                <option value="DATA">DATA</option>
-                                <option value="KEGIATAN">KEGIATAN</option>
+                                <option value="LAPORAN" 
+                                    @if ($rencana->hasil == "LAPORAN")
+                                        selected
+                                    @endif>
+                                LAPORAN
+                                </option>
+                                <option value="DOKUMEN"
+                                    @if ($rencana->hasil == "DOKUMEN")
+                                        selected
+                                    @endif>
+                                DOKUMEN
+                                </option>
+                                <option value="DATA"
+                                    @if ($rencana->hasil == "DATA")
+                                        selected
+                                    @endif>
+                                DATA
+                                </option>
+                                <option value="KEGIATAN"
+                                    @if ($rencana->hasil == "KEGIATAN")
+                                        selected
+                                    @endif>
+                                KEGIATAN
+                                </option>
                               </select>
                         </div>
 
@@ -75,7 +96,7 @@
                                 <div class="form-group">
                                     <label for="target">WAKTU (Bulan)</label>
                                     <div class="input-group">
-                                        <input type="number" name="waktu" min="1" max="12" required class="form-control">
+                                        <input type="number" name="waktu" value="{{ $rencana->waktu }}" min="1" max="12" required class="form-control">
                                         <div class="col-sm-4">
                                             <label for="" >Bulan</label>
                                         </div>
@@ -84,7 +105,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" name="submit" value="save" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"> Simpan  </button>
+                        <button type="submit" name="submit" value="update" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"> Simpan  </button>
                     </form>
                     </div>
                 
