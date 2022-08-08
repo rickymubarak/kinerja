@@ -39,10 +39,16 @@
 
                         <div class="form-group">
                         <label for="NIP">NIP</label>
+<<<<<<< HEAD
                         <input type="number" class="form-control" name="nip" placeholder="Masukan NIP tanpa spasi !!" required 
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             type = "number"
                             maxlength = "18">
+=======
+                        <input name="nip" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        type = "number"
+                        maxlength = "18" placeholder="Masukan NIP tanpa spasi !" required class="form-control">
+>>>>>>> 6a5d1a4 (menambahkan soft-delete)
                         </div>
                         
                         <div class="form-group">
@@ -57,17 +63,31 @@
 
                         <div class="form-group">
                             <label for="target">TARGET</label>
+<<<<<<< HEAD
                             <input type="number" name="target" placeholder="masukan jumlah target" required class="form-control">
+=======
+                            <input type="number" name="target" min="1"  required class="form-control">
+>>>>>>> 6a5d1a4 (menambahkan soft-delete)
                         </div>
 
                         <div class="form-group">
                             <label for="hasil">Output / Hasil</label>
+<<<<<<< HEAD
                             <select type='number' class="form-control" name="hasil" required aria-label=".form-select-sm example">
                                 <option selected>-</option>
                                 <option value="1">LAPORAN</option>
                                 <option value="2">DOKUMEN</option>
                                 <option value="3">DATA</option>
                             </select>
+=======
+                            <select class="form-control" type="text" name="hasil" required>
+                                <option value="">-</option>
+                                <option value="LAPORAN">LAPORAN</option>
+                                <option value="DOKUMEN">DOKUMEN</option>
+                                <option value="DATA">DATA</option>
+                                <option value="KEGIATAN">KEGIATAN</option>
+                              </select>
+>>>>>>> 6a5d1a4 (menambahkan soft-delete)
                         </div>
 
                         <div class="row">
@@ -84,7 +104,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" name="submit" value="save" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Simpan  </button>
+                        <button type="submit" name="submit" value="save" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"> Simpan  </button>
                     </form>
                     </div>
                 

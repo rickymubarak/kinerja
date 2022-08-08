@@ -23,4 +23,11 @@ Route::any('/', function() {
 Route::any('/rencana', [RencanaController::class,'index']);
 Route::any('/rencana/create', [RencanaController::class,'create']);
 Route::any('/rencana/store', [RencanaController::class,'store']);
+<<<<<<< HEAD
 Route::get('/rencana/{ id }/edit/', [RencanaController::class,'edit']);
+=======
+Route::any('/rencana/{id}/edit', [RencanaController::class,'edit']);
+Route::any('/rencana/{id}', [RencanaController::class,'update']);
+Route::any('/rencana/{id}', [RencanaController::class,'hapus']);
+Route::any('/rencana/recycle/{id}', [RencanaController::class,'restore']);
+>>>>>>> 6a5d1a4 (menambahkan soft-delete)

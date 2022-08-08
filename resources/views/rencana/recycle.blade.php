@@ -13,10 +13,7 @@
   <body>
     
     <div class="card p-5">
-        <div>
-            <a href="/rencana/create" class="btn btn-primary col-sm-2">Tambah Rencana</a>
-            <a href="/rencana/recycle" class="btn btn-warning col-sm-2">Tong Sampah</a>
-        </div>
+        <a href="/rencana/create" class="btn btn-primary col-sm-2">Tambah Rencana</a>
 
         <div class="card-header text-center bg bg-warning mt-3">
             RENCANA KINERJA PEGAWAI PEMERINTAH KOTA PONTIANAK TAHUN 2022
@@ -31,7 +28,6 @@
                         <th>Rencana</th>
                         <th>Hasil</th>
                         <th>Waktu</th>
-                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -49,14 +45,8 @@
                         <td>{{ $r->nama }}</td>
                         <td>{{ $r->rencana }}</td>
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
-<<<<<<< HEAD
-                        <td>{{ $r->waktu }}<br> Bulan</td>
-                        <td><a href="/rencana/{{ $r->id }}/edit/">EDIT</a></td>
-=======
                         <td>{{ $r->waktu }} <br> BULAN</td>
-                        <td><a href="" class="btn btn-success">100% Kinerja</a></td>
-                        <td><a class="btn btn-secondary m-3" href="/rencana/{{ $r->id }}/edit" role="button">EDIT</a><b><a type="button" href="/rencana/{{ $r->id }}" class="btn btn-danger">DELETE</a></b></td>
->>>>>>> 6a5d1a4 (menambahkan soft-delete)
+                        <td><a class="btn btn-success m-3" href="/rencana/recycle/{{ $r->id }}" role="button">KEMBALIKAN DATA</a><b><a type="button" href="/rencana/recycle/{{ $r->id }}" class="btn btn-danger">HAPUS SELAMANYA</a></b></td>
                     </tr>
 
                 @endforeach
