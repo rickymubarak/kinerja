@@ -13,7 +13,9 @@
   <body>
     
     <div class="card p-5">
-        <a href="/rencana/create" class="btn btn-primary col-sm-2">Tambah Rencana</a>
+        <div>
+            <a href="/rencana" class="btn btn-primary col-sm-2">Kembali</a>
+        </div>
 
         <div class="card-header text-center bg bg-warning mt-3">
             RENCANA KINERJA PEGAWAI PEMERINTAH KOTA PONTIANAK TAHUN 2022
@@ -46,7 +48,11 @@
                         <td>{{ $r->rencana }}</td>
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
                         <td>{{ $r->waktu }} <br> BULAN</td>
-                        <td><a class="btn btn-success m-3" href="/rencana/recycle/{{ $r->id }}" role="button">KEMBALIKAN DATA</a><b><a type="button" href="/rencana/recycle/{{ $r->id }}" class="btn btn-danger">HAPUS SELAMANYA</a></b></td>
+                        <td>
+                            <button type="button" onclick="restore('{{ $r->id }}')" class="btn btn-warning p-1">
+                                Kembalikan Data
+                            </button>
+                        </td>
                     </tr>
 
                 @endforeach
@@ -64,5 +70,12 @@
         $(document).ready(function () {
             $('#example').DataTable();
         });
+    
+    function restore(id) {
+        pesan = confirm('Data akan dikembalikan ?');
+        if(pesan) {
+            window.location = '/rencana/restore' + id
+        }
+    }
     </script>
   </body>
