@@ -47,8 +47,7 @@ class RencanaController extends Controller
     // menghapus soft menggunakan colom delete_at di database dan model
     public function hapus($id)
     {
-        $rencana = T_Rencana::find($id);
-        $rencana->delete();
+        $rencana = T_Rencana::find($id)->delete();
         return redirect('rencana');
     }
 
@@ -73,6 +72,7 @@ class RencanaController extends Controller
     //     return redirect('rencana.recycle');
     // }
 
+    // menampilkan data yang hanya dihapus
     public function recycle()
     {
         $rencana = T_Rencana::onlyTrashed()->get();

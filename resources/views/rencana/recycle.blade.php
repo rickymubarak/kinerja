@@ -49,8 +49,8 @@
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
                         <td>{{ $r->waktu }} <br> BULAN</td>
                         <td>
-                            <button type="button" onclick="restore('{{ $r->id }}')" class="btn btn-warning p-1">
-                                Kembalikan Data
+                            <button type="button" class="btn btn-warning" onclick="restore('{{ $r->id }}')" class="btn btn-warning p-1">
+                                Restore
                             </button>
                         </td>
                     </tr>
@@ -70,11 +70,12 @@
         $(document).ready(function () {
             $('#example').DataTable();
         });
-    
+    </script>
+    <script>
     function restore(id) {
         pesan = confirm('Data akan dikembalikan ?');
         if(pesan) {
-            window.location = '/rencana/restore' + id
+            window.location = '/rencana/restore/' + id
         }
     }
     </script>

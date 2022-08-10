@@ -65,6 +65,7 @@
             </table>
         </div>
     </div>
+@endsection
    <script>
         function hapusData() {
             pesan = confirm('Yakin data akan dihapus ?');
@@ -74,4 +75,3 @@
                 return false;
         }
    </script>
-@endsection
