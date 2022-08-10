@@ -23,7 +23,19 @@ Route::any('/', function() {
 Route::any('/rencana', [RencanaController::class,'index']);
 Route::any('/rencana/create', [RencanaController::class,'create']);
 Route::any('/rencana/store', [RencanaController::class,'store']);
-Route::any('/rencana/{id}/edit', [RencanaController::class,'edit']);
-Route::any('/rencana/{id}', [RencanaController::class,'update']);
-Route::any('/rencana/{id}', [RencanaController::class,'hapus']);
-Route::any('/rencana/recycle/{id}', [RencanaController::class,'restore']);
+
+// route mengarahkan edit
+Route::get('/rencana/edit/{id}', [RencanaController::class,'edit']);
+
+// route aksi edit
+Route::put('/rencana/{id}', [RencanaController::class,'update']);
+
+// route delete
+Route::any('/rencana/hapus/{id}',[RencanaController::class,'hapus']);
+
+// route menampilkan softdelete
+Route::any('/rencana/recycle',[RencanaController::class,'recycle']);
+
+// route menjalankan aksi restore
+Route::any('/rencana/restore/{id}',[RencanaController::class,'restore']);
+

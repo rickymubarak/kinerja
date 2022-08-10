@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+ <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kinerja</title>
@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-  </head>
-  <body>
-    
+</head>
+
     <div class="card p-5">
         <div>
             <a href="/rencana/create" class="btn btn-primary col-sm-2">Tambah Rencana</a>
@@ -49,9 +48,33 @@
                         <td>{{ $r->nama }}</td>
                         <td>{{ $r->rencana }}</td>
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
-                        <td>{{ $r->waktu }} <br> BULAN</td>
-                        <td><a href="" class="btn btn-success">100% Kinerja</a></td>
-                        <td><a class="btn btn-secondary m-3" href="/rencana/{{ $r->id }}/edit" role="button">EDIT</a><b><a type="button" href="/rencana/{{ $r->id }}" class="btn btn-danger">DELETE</a></b></td>
+                        <td>{{ $r->waktu }}<br> Bulan</td>
+                        <td>
+                            @if ($r->status == '1')
+                            <button class="btn btn-success">
+                                VALID
+                            </button>
+                            @elseif($r->status == '0')
+                                <button class="btn btn-danger">
+                                    DITOLAK
+                                </button>
+                            @endif
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary m-3" onclick="window.location='/rencana/edit/{{ $r->id }}'">
+                                EDIT
+                            </button>
+                            <b>
+                                <form method="POST" action="/rencana/hapus/{{ $r->id }}" style="display: inline;"
+                                    onsubmit="return hapusData()">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">
+                                        DELETE    
+                                    </button>
+                                </form>
+                            </b>
+                        </td>
                     </tr>
 
                 @endforeach
@@ -65,9 +88,19 @@
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
-  </body>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+<script>
+    function hapusData() {
+        pesan = confirm('Yakin data akan dihapus ?');
+        if (pesan)
+            return true;
+        else
+            return false;
+    }
+</script>
+</body>
