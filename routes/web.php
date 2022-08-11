@@ -34,8 +34,10 @@ Route::put('/rencana/{id}', [RencanaController::class,'update']);
 Route::any('/rencana/hapus/{id}',[RencanaController::class,'hapus']);
 
 // route menampilkan softdelete
-Route::any('/rencana/recycle',[RencanaController::class,'recycle']);
+Route::get('/rencana/recycle',[RencanaController::class,'recycle']);
 
 // route menjalankan aksi restore
 Route::any('/rencana/restore/{id}',[RencanaController::class,'restore']);
 
+// route validasi panggil
+Route::get('rencana/validasi/{id}',[RencanaController::class,'validasi']);

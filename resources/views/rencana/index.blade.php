@@ -42,7 +42,7 @@
 
                 @foreach ($rencana as $r)
 
-                    <tr class="text-center">
+                    <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $r->nip }}</td>
                         <td>{{ $r->nama }}</td>
@@ -50,13 +50,17 @@
                         <td>{{ $r->target }}<br>{{ $r->hasil }}</td>
                         <td>{{ $r->waktu }}<br> Bulan</td>
                         <td>
-                            @if ($r->status == '1')
-                            <button class="btn btn-success">
-                                VALID
-                            </button>
+                            @if ($r->status == '2')
+                                <button class="btn btn-success" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
+                                    VALID
+                                </button>
                             @elseif($r->status == '0')
-                                <button class="btn btn-danger">
+                                <button class="btn btn-danger" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
                                     DITOLAK
+                                </button>
+                            @else
+                                <button class="btn btn-secondary" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
+                                    PROSES
                                 </button>
                             @endif
                         </td>

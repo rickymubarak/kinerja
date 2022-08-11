@@ -1,9 +1,14 @@
-@extends('layouts.main')
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kinerja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-@section('content')
-    
-<body>
-    
+<body>    
     <div class="container py-5">
         
         <!-- For demo purpose -->
@@ -87,7 +92,7 @@
             </div>
             </div>
         </div>
-
+        
     <script>
         $(document).ready(function(){
             //Menu Toggle Script
@@ -118,4 +123,7 @@
         })
     </script>
 
-@endsection
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        
+</body>

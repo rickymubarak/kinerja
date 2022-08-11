@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\T_Rencana;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class RencanaController extends Controller
 {
@@ -67,8 +69,27 @@ class RencanaController extends Controller
 
     public function validasi($id)
     {
-        $rencana = T_Rencana::find($id)->update();
-        return view('rencana');
+        $rencana = DB::table('t_rencana')
+        ->select('status')
+        ->where('id','=',$id)
+        ->first();
+
+        if($rencana->status == '1')
+        {
+            $status = '2';
+        }
+        elseif($rencana->status == '0')
+        {
+            $status = '2';
+        }
+        else
+        {
+            $status = '0';
+        }
+
+        $value = array('status'=> $status);
+        DB::table('t_rencana')->where('id',$id)->update($value);
+        return redirect('rencana');
     }
 
 }
