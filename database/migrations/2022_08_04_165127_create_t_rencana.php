@@ -21,8 +21,6 @@ class CreateTRencana extends Migration
             $table->string('target');
             $table->string('hasil');
             $table->string('waktu');
-            $table->integer('status');
-            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
     }
