@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kinerja</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 </head>
 
@@ -51,33 +54,31 @@
                         <td>{{ $r->waktu }}<br> Bulan</td>
                         <td>
                             @if ($r->status == '2')
-                                <button class="btn btn-success" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
+                                <button class="btn btn-success px-4" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
                                     VALID
                                 </button>
                             @elseif($r->status == '0')
-                                <button class="btn btn-danger" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
+                                <button class="btn btn-danger px-3" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
                                     DITOLAK
                                 </button>
                             @else
-                                <button class="btn btn-secondary" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
+                                <button class="btn btn-secondary px-3" onclick="window.location='/rencana/validasi/{{ $r->id }}'">
                                     PROSES
                                 </button>
                             @endif
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary m-3" onclick="window.location='/rencana/edit/{{ $r->id }}'">
+                            <button type="button" class="btn btn-secondary mb-1 px-4" onclick="window.location='/rencana/edit/{{ $r->id }}'">
                                 EDIT
                             </button>
-                            <b>
                                 <form method="POST" action="/rencana/hapus/{{ $r->id }}" style="display: inline;"
                                     onsubmit="return hapusData()">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
+                                    <button type="submit" class="btn btn-danger px-3">
                                         DELETE    
                                     </button>
                                 </form>
-                            </b>
                         </td>
                     </tr>
 

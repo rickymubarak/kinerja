@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RencanaController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,12 @@ Route::middleware(['auth'])->group(function(){
     // route validasi panggil
     Route::get('rencana/validasi/{id}',[RencanaController::class,'validasi']);
 });
+
+Route::resource('roles', RoleController::class);
+// Route::controller(RoleController::class)->group(function(){
+//     Route::get('/roles','index')->middleware('can:read role');
+//     Route::get('/roles/create','create');
+// });
 
 Auth::routes();
 
