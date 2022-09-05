@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddUpDataToTRencana extends Migration
+class AddDataToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddUpDataToTRencana extends Migration
      */
     public function up()
     {
-        Schema::table('t_rencana', function (Blueprint $table) {
-            $table->integer('status')->default(1);
-            $table->dateTime('deleted_at')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('nip',18)->unique();
+            $table->string('level',5);
         });
     }
 
@@ -26,8 +26,8 @@ class AddUpDataToTRencana extends Migration
      */
     public function down()
     {
-        Schema::table('t_rencana', function (Blueprint $table) {
-            Schema::dropIfExists('t_rencana');
+        Schema::table('users', function (Blueprint $table) {
+            Schema::dropIfExists('users');
         });
     }
 }

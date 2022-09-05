@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\Verifiesemails;
-// use Illuminate\Foundation\Auth\VerifiesNames;
+use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
 {
@@ -40,25 +39,4 @@ class VerificationController extends Controller
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
-
-    // use VerifiesNames;
-
-    // /**
-    //  * user akan di arahkan setelah verifikasi.
-    //  * 
-    //  * @var string
-    //  */
-    // protected $redirectTo = RouteServiceProvider::HOME;
-
-    // /**
-    //  * membuat controller baru instan
-    //  * 
-    //  * @return void
-    //  */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    //     $this->middleware('signed')->only('verify');
-    //     $this->middleware('throttle:6,1')->only('verify','resend');
-    // }
 }

@@ -68,14 +68,14 @@
                             @endif
                         </td>
                         <td>
-                            <button type="button" class="btn btn-secondary mb-1 px-4" onclick="window.location='/rencana/edit/{{ $r->id }}'">
+                            <button type="button" class="btn btn-primary mb-1 px-4" onclick="window.location='/rencana/edit/{{ $r->id }}'">
                                 EDIT
                             </button>
                                 <form method="POST" action="/rencana/hapus/{{ $r->id }}" style="display: inline;"
                                     onsubmit="return hapusData()">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger px-3">
+                                    <button type="submit" class="btn btn-danger mb-1 px-3">
                                         DELETE    
                                     </button>
                                 </form>

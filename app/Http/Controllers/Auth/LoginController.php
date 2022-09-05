@@ -5,9 +5,22 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
-{
+{   
+    // public function index()
+    // {
+    //     if($user = Auth::user()){
+    //         if ($user->level == '1') {
+    //             return redirect()->intended('home');
+    //         }elseif($user->level == '2'){
+    //             return redirect()->intended('pegawai');
+    //         }
+    //     }
+
+    //     return view('login');
+    // }
     /*
     |--------------------------------------------------------------------------
     | Login Controller
