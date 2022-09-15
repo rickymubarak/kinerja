@@ -31,7 +31,7 @@
               
                 <div class="tab-content">
                     <div id="nav-tab-card" class="tab-pane fade show active">
-                    <p class="alert alert-success">Some text success or error</p>
+                    <p class="alert alert-success">Data Berhasil di Update.</p>
                     
                     <form role="form" action="/rencana/{{ $rencana->id }}" method="POST">
 

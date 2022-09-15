@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    
+                    <a type="button" class="btn btn-outine-dark" href="/rencana"> Lanjut ke Project! </a>
                 </div>
             </div>
         </div>

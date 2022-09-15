@@ -23,15 +23,15 @@
           <div class="col-lg-7 mx-auto">
             <div class="bg-white nav-pills rounded-lg nav-fill p-5">
                 <div class="row">
-                    <a data-toggle="pill" href="/rencana/" class="nav-link active rounded-pill mb-3 col-sm-3 text-center">KEMBALI
-                        <a data-toggle="pill" href="" class="nav-link active rounded-pill mb-3 col-sm-9 text-center">
+                    <a data-toggle="pill" href="/rencana/" class="alert alert-info mb-3 col-sm-3 text-center">KEMBALI
+                        <a data-toggle="pill" href="" class="alert alert-primary rounded-lg mb-3 col-sm-9 text-center">
                         FORM INPUT RENCANA KERJA
                     </a>
                 </div>
               
                 <div class="tab-content">
                     <div id="nav-tab-card" class="tab-pane fade show active">
-                        <p class="alert alert-success">Some text success or error</p>
+                        <p class="alert alert-success my-alert d-none">Data Berhasil ditambahkan.</p>
                         
                         <form role="form" action="/rencana/store" method="POST">
                             
@@ -84,7 +84,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" name="submit" value="save" class="subscribe btn btn-success btn-block rounded-pill shadow-sm"> Simpan  </button>
+                        <button type="submit" name="submit" value="save" class="btn btn-outline-success btn-block rounded-pill shadow-sm btn-kirim"> Simpan  </button>
                     </form>
                     </div>
                 
@@ -122,6 +122,8 @@
             });
         })
     </script>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

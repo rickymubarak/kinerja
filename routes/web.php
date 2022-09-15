@@ -15,6 +15,10 @@ use App\Http\Controllers\RoleController;
 |
 */
 
+// dengan laravel ui
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'])->group(function(){
     Route::any('/', function() {
@@ -23,6 +27,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/rencana',[RencanaController::class,'index']);
     Route::any('/rencana/create', [RencanaController::class,'create']);
     Route::any('/rencana/store', [RencanaController::class,'store']);
+    Route::get('/master', function(){
+        return view('layouts.master');
+    });
 
     // route mengarahkan edit
     Route::get('/rencana/edit/{id}', [RencanaController::class,'edit']);
@@ -48,11 +55,3 @@ Route::resource('roles', RoleController::class);
 //     Route::get('/roles','index')->middleware('can:read role');
 //     Route::get('/roles/create','create');
 // });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

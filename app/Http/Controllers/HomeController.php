@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    // Respown untuk login terlebih dahulu
     /**
      * Create a new controller instance.
      *
