@@ -1,413 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Blank Page &mdash; Stisla</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Dashboard</title>
 
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="../assets/modules/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/modules/fontawesome/css/all.min.css">
-
-  <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../assets/modules/jqvmap/dist/jqvmap.min.css">
-  <link rel="stylesheet" href="../assets/modules/weather-icon/css/weather-icons.min.css">
-  <link rel="stylesheet" href="../assets/modules/weather-icon/css/weather-icons-wind.min.css">
-  <link rel="stylesheet" href="../assets/modules/summernote/summernote-bs4.css">
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
-  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 </head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
-<body>
-<div id="app">
-  <div class="main-wrapper main-wrapper-1">
-    <div class="navbar-bg"></div>
-    <nav class="navbar navbar-expand-lg main-navbar">
-      <form class="form-inline ml-auto">
-        <ul class="navbar-nav ml-3">
-          <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-          <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-        </ul>
-        <div class="search-element text-right">
-          <input class="form-control" type="search" placeholder="جستجو" aria-label="Search" data-width="250">
-          <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-          <div class="search-backdrop"></div>
-          <div class="search-result">
-            <div class="search-header">
-              نتیجه جستجو
-            </div>
-            <div class="search-item">
-              <a href="#">چگونه ناسا رو هک کنیم؟</a>
-              <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-            </div>
-            <div class="search-item">
-              <a href="#">Kodinger.com</a>
-              <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-            </div>
-            <div class="search-item">
-              <a href="#">پنل مدیریت</a>
-              <a href="#" class="search-close"><i class="fas fa-times"></i></a>
-            </div>
-            <div class="search-header">
-              نتایج
-            </div>
-            <div class="search-item">
-              <a href="#">
-                <img class="ml-3 rounded" width="30" src="../assets/img/products/product-3-50.png" alt="product">
-                آیفون s9 تولید شد
-              </a>
-            </div>
-            <div class="search-item">
-              <a href="#">
-                <img class="ml-3 rounded" width="30" src="../assets/img/products/product-2-50.png" alt="product">
-                چه شادی هایی که زیر پای انسانها سرکوب شدند
-              </a>
-            </div>
-            <div class="search-item">
-              <a href="#">
-                <img class="ml-3 rounded" width="30" src="../assets/img/products/product-1-50.png" alt="product">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.
-              </a>
-            </div>
-            <div class="search-header">
-              پروژه ها
-            </div>
-            <div class="search-item">
-              <a href="#">
-                <div class="search-icon bg-danger text-white ml-3">
-                  <i class="fas fa-code"></i>
-                </div>
-                متریال ادمین پنل
-              </a>
-            </div>
-            <div class="search-item">
-              <a href="#">
-                <div class="search-icon bg-primary text-white ml-3">
-                  <i class="fas fa-laptop"></i>
-                </div>
-                ایجاد صفحه لندینگ
-              </a>
-            </div>
-          </div>
-        </div>
-      </form>
-      <ul class="navbar-nav navbar-right">
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-          <div class="dropdown-menu dropdown-list text-right dropdown-menu-left">
-            <div class="dropdown-header">پیام ها
-              <div class="float-left">
-                <a href="#">علامتگذاری همه بصورت خوانده شده</a>
-              </div>
-            </div>
-            <div class="dropdown-list-content dropdown-list-message">
-              <a href="#" class="dropdown-item dropdown-item-unread">
-                <div class="dropdown-item-avatar">
-                  <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle">
-                  <div class="is-online"></div>
-                </div>
-                <div class="dropdown-item-desc text-right">
-                  <b>مهدی خانزادی</b>
-                  <p>سلام داداچ!</p>
-                  <div class="time">۱۰ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item dropdown-item-unread">
-                <div class="dropdown-item-avatar">
-                  <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle">
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>مهیار انصاری</b>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</p>
-                  <div class="time">۱۲ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item dropdown-item-unread">
-                <div class="dropdown-item-avatar">
-                  <img alt="image" src="../assets/img/avatar/avatar-3.png" class="rounded-circle">
-                  <div class="is-online"></div>
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>آمیتا پاچان</b>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</p>
-                  <div class="time">۱۲ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-avatar">
-                  <img alt="image" src="../assets/img/avatar/avatar-4.png" class="rounded-circle">
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>مهدی خانزادی</b>
-                  <p>سلام سیستم پشتیبانی پاترونیک رو استفاده کنید</p>
-                  <div class="time">۱۶ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-avatar">
-                  <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle">
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>لورم ایپسوم</b>
-                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</p>
-                  <div class="time">دیروز</div>
-                </div>
-              </a>
-            </div>
-            <div class="dropdown-footer text-center">
-              <a href="#"> دیدن همه پیام ها<i class="fas fa-chevron-left"></i></a>
-            </div>
-          </div>
-        </li>
-        <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-          <div class="dropdown-menu dropdown-list dropdown-menu-left">
-            <div class="dropdown-header text-right">نوتیفیکیشن ها
-              <div class="float-left">
-                <a href="#"> علامتگذاری همه بصورت خوانده شده</a>
-              </div>
-            </div>
-            <div class="dropdown-list-content dropdown-list-icons text-right">
-              <a href="#" class="dropdown-item dropdown-item-unread">
-                <div class="dropdown-item-icon bg-primary text-white">
-                  <i class="fas fa-code"></i>
-                </div>
-                <div class="dropdown-item-desc">
-                  قالب مدیریتی متریال اپدیت جدید داد!
-                  <div class="time text-primary">۲ دقیقه پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-icon bg-info text-white">
-                  <i class="far fa-user"></i>
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>شما</b> و <b>مهیار انصاری</b> هم اکنون همکار هستید.
-                  <div class="time">۱۰ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-icon bg-success text-white">
-                  <i class="fas fa-check"></i>
-                </div>
-                <div class="dropdown-item-desc">
-                  <b>مهدی خانزادی</b> اطلاعات مرتبط با <b>قالب</b> را <b>آپلود کرد.</b>
-                  <div class="time">۱۲ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-icon bg-danger text-white">
-                  <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <div class="dropdown-item-desc">
-                  فضای هارد دیسک پر شده است لطفا آن را خالی کنید.
-                  <div class="time">۱۷ ساعت پیش</div>
-                </div>
-              </a>
-              <a href="#" class="dropdown-item">
-                <div class="dropdown-item-icon bg-info text-white">
-                  <i class="fas fa-bell"></i>
-                </div>
-                <div class="dropdown-item-desc">
-                  به قالب متریال خوش آمدید
-                  <div class="time">دیروز</div>
-                </div>
-              </a>
-            </div>
-            <div class="dropdown-footer text-center">
-              <a href="#">
-                <span>نمایش همه</span>
-                <i class="fas fa-chevron-left"></i>
-              </a>
-            </div>
-          </div>
-        </li>
-        <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-          <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-          <div class="d-sm-none d-lg-inline-block">سلام مهدی</div></a>
-          <div class="dropdown-menu dropdown-menu-right text-right">
-            <div class="dropdown-title text-center">۵ دقیقه پیش لاگین کردین</div>
-            <a href="features-profile.html" class="dropdown-item has-icon">
-              <span>پروفایل</span>
-              <i class="far fa-user"></i>
-            </a>
-            <a href="features-activities.html" class="dropdown-item has-icon">
-              <span>فعالیت ها</span>
-              <i class="fas fa-bolt"></i>
-            </a>
-            <a href="features-settings.html" class="dropdown-item has-icon">
-              <span>تنظیمات</span>
-              <i class="fas fa-cog"></i>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item has-icon text-danger">
-              <span>خروج</span>
-              <i class="fas fa-sign-out-alt"></i>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <div class="main-sidebar sidebar-style-2">
-      <aside id="sidebar-wrapper">
-        <div class="sidebar-brand">
-          <a href="index.html">مدیریت پاترونیک</a>
-        </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-          <a href="index.html">مدیریت فروش</a>
-        </div>
-        <ul class="sidebar-menu">
-          <li class="menu-header">داشبورد</li>
-          <li class="dropdown active">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>داشبورد</span></a>
-            <ul class="dropdown-menu">
-              <li class=active><a class="nav-link" href="index-0.html">داشبورد عمومی</a></li>
-              <li><a class="nav-link" href="index.html">داشبورد فروش محصولات</a></li>
-            </ul>
-          </li>
-          <li class="menu-header">امکانات بیشتر</li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>صفحه بندی</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="layout-default.html">حالت پیش فرض</a></li>
-              <li><a class="nav-link" href="layout-transparent.html">سایدبار بدون رنگ</a></li>
-              <li><a class="nav-link" href="layout-top-navigation.html">نویگیشن بالا</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>صفحه خالی</span></a></li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>بوت استرپ</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="bootstrap-alert.html">آلرت</a></li>
-              <li><a class="nav-link" href="bootstrap-badge.html">بدج</a></li>
-              <li><a class="nav-link" href="bootstrap-breadcrumb.html">بردکرامپ</a></li>
-              <li><a class="nav-link" href="bootstrap-buttons.html">دکمه ها</a></li>
-              <li><a class="nav-link" href="bootstrap-card.html">کارت</a></li>
-              <li><a class="nav-link" href="bootstrap-carousel.html">کروسل</a></li>
-              <li><a class="nav-link" href="bootstrap-collapse.html">کولاپس</a></li>
-              <li><a class="nav-link" href="bootstrap-dropdown.html">دراپ دون</a></li>
-              <li><a class="nav-link" href="bootstrap-form.html">فرم</a></li>
-              <li><a class="nav-link" href="bootstrap-list-group.html">لیست گروه</a></li>
-              <li><a class="nav-link" href="bootstrap-media-object.html">مدیا ابجکت</a></li>
-              <li><a class="nav-link" href="bootstrap-modal.html">مودال</a></li>
-              <li><a class="nav-link" href="bootstrap-nav.html">نویگیشن</a></li>
-              <li><a class="nav-link" href="bootstrap-navbar.html">نوبار</a></li>
-              <li><a class="nav-link" href="bootstrap-pagination.html">پجینیشن</a></li>
-              <li><a class="nav-link" href="bootstrap-popover.html">پاپ اور</a></li>
-              <li><a class="nav-link" href="bootstrap-progress.html">پراگرس</a></li>
-              <li><a class="nav-link" href="bootstrap-table.html">جدول</a></li>
-              <li><a class="nav-link" href="bootstrap-tooltip.html">تولتیپ</a></li>
-              <li><a class="nav-link" href="bootstrap-typography.html">تایپوگرافی</a></li>
-            </ul>
-          </li>
-          <li class="menu-header">امکانات دیگر</li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i> <span>کامپوننت ها</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="components-gallery.html">گالری</a></li>
-              <li><a class="nav-link" href="components-multiple-upload.html">مولتی آپلود</a></li>
-              <li><a class="nav-link" href="components-tab.html">تب</a></li>
-              <li><a class="nav-link" href="components-table.html">جدول</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>فرم ها</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="forms-advanced-form.html">فرم پیشرفته</a></li>
-              <li><a class="nav-link" href="forms-editor.html">ویرایشگر</a></li>
-              <li><a class="nav-link" href="forms-validation.html">ولیدیشن</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>ماژول ها</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="modules-calendar.html">تقویم</a></li>
-              <li><a class="nav-link" href="modules-chartjs.html">چارت ها</a></li>
-              <li><a class="nav-link" href="modules-datatables.html">دیتاتیبل</a></li>
-              <li><a class="nav-link" href="modules-flag.html">پرچم</a></li>
-              <li><a class="nav-link" href="modules-font-awesome.html">فونت اوسوم</a></li>
-              <li><a class="nav-link" href="modules-ion-icons.html">ای او ن ایکون</a></li>
-              <li><a class="nav-link" href="modules-owl-carousel.html">اول کراسول</a></li>
-              <li><a class="nav-link" href="modules-sparkline.html">اسپارک لاین</a></li>
-              <li><a class="nav-link" href="modules-sweet-alert.html">سویت الرت</a></li>
-              <li><a class="nav-link" href="modules-toastr.html">توستر</a></li>
-              <li><a class="nav-link" href="modules-vector-map.html">وکتور مپ</a></li>
-              <li><a class="nav-link" href="modules-weather-icon.html">ایکن اب و هوا</a></li>
-            </ul>
-          </li>
-          <li class="menu-header">صفحات</li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="far fa-user"></i> <span>ثبت نام</span></a>
-            <ul class="dropdown-menu">
-              <li><a href="auth-forgot-password.html">فراموشی کلمه عبور</a></li>
-              <li><a href="auth-login.html">لاگین</a></li>
-              <li><a href="auth-register.html">ثبت نام</a></li>
-              <li><a href="auth-reset-password.html">بازیابی کلمه عبور</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="nav-link has-dropdown"><i class="fas fa-exclamation"></i> <span>خطاها</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="errors-503.html">503</a></li>
-              <li><a class="nav-link" href="errors-403.html">403</a></li>
-              <li><a class="nav-link" href="errors-404.html">404</a></li>
-              <li><a class="nav-link" href="errors-500.html">500</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>سازنده ها</span></a></li>
-        </ul>
-
-        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-              <i class="fas fa-rocket"></i> مستندات قالب
-            </a>
-        </div>
-      </aside>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-      <section class="section">
-        <div class="section-header">
-          <h1>داشبورد</h1>
-        </div>
-      </section>
-    </div>
-    <footer class="main-footer">
-      <div class="footer-left">
-        Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-      </div>
-      <div class="footer-right">
-
-      </div>
-    </footer>
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <!-- Right Side Of Navbar -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Authentication Links -->
+      @guest
+          @if (Route::has('login'))
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+              </li>
+          @endif
+
+          @if (Route::has('register'))
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+              </li>
+          @endif
+      @else
+          <div class="dropdown">
+            <li>Selamat Datang,</li>
+            <li class="dropdown-toggle mr-4 btn btn-outline-info" type="button" data-toggle="dropdown" aria-expanded="false">
+                {{ Auth::user()->name }}
+            </li>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+              
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+            </div>
+          </div>
+      @endguest
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">E-Kinerja</span>
+    </a>
+
+      <!-- Sidebar Menu -->
+      <div class="sidebar">
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="/" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../rencana" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Rencana
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Validasi
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Peforma Kinerja
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.sidebar-menu -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        @yield('content')
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2022 <a href="https://grinsmedia.github.io">PJLP BKPSDM</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
 </div>
+<!-- ./wrapper -->
 
-<!-- General JS Scripts -->
-<script src="../assets/modules/jquery.min.js"></script>
-<script src="../assets/modules/popper.js"></script>
-<script src="../assets/modules/tooltip.js"></script>
-<script src="../assets/modules/bootstrap/js/bootstrap.min.js"></script>
-<script src="../assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
-<script src="../assets/modules/moment.min.js"></script>
-<script src="../assets/js/stisla.js"></script>
-
-<!-- JS Libraies -->
-<script src="../assets/modules/simple-weather/jquery.simpleWeather.min.js"></script>
-<script src="../assets/modules/chart.min.js"></script>
-<script src="../assets/modules/jqvmap/dist/jquery.vmap.min.js"></script>
-<script src="../assets/modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="../assets/modules/summernote/summernote-bs4.js"></script>
-<script src="../assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
-<!-- Page Specific JS File -->
-<script src="../assets/js/page/index.js"></script>
-
-<!-- Template JS File -->
-<script src="../assets/js/scripts.js"></script>
-<script src="../assets/js/custom.js"></script>
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="../plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="../plugins/moment/moment.min.js"></script>
+<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard.js"></script>
 </body>
 </html>

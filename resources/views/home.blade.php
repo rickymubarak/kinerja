@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -15,6 +15,7 @@
                     @endif
                     
                     <a type="button" class="btn btn-outine-dark" href="/rencana"> Lanjut ke Project! </a>
+                    <a type="button" class="btn btn-outine-dark" href="/master"> test </a>
                 </div>
             </div>
         </div>
