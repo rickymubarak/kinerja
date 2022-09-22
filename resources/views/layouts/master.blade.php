@@ -29,11 +29,6 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -91,7 +86,7 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="/" class="nav-link active">
+              <a aria-current="page" href="/" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -99,7 +94,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="../rencana" class="nav-link">
+              <a aria-current="page" href="../rencana" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
                   Rencana
@@ -107,7 +102,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a aria-current="page" href="#" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Validasi
@@ -115,7 +110,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a aria-current="page" href="#" class="nav-link">
                 <i class="nav-icon fas fa-chart-pie"></i>
                 <p>
                   Peforma Kinerja
@@ -135,7 +130,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">E-Performance</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -197,9 +192,15 @@
 <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('a').click(function(){
+      $('a.nav-link.active').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+</script>
+
 </body>
 </html>

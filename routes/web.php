@@ -27,8 +27,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/rencana',[RencanaController::class,'index']);
     Route::any('/rencana/create', [RencanaController::class,'create']);
     Route::any('/rencana/store', [RencanaController::class,'store']);
-    Route::get('/master', function(){
-        return view('/layouts/master');
+    Route::get('/main', function(){
+        return view('/layouts/main');
     });
 
     // route mengarahkan edit

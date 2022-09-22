@@ -23,7 +23,7 @@
           <div class="col-lg-7 mx-auto">
             <div class="bg-white nav-pills rounded-lg nav-fill p-5">
                 <div class="row">
-                    <a data-toggle="pill" href="/rencana/" class="alert alert-info mb-3 col-sm-3 text-center">KEMBALI
+                    <a data-toggle="pill" href="/rencana" class="alert alert-info mb-3 col-sm-3 text-center">KEMBALI
                         <a data-toggle="pill" href="" class="alert alert-primary rounded-lg mb-3 col-sm-9 text-center">
                         FORM INPUT RENCANA KERJA
                     </a>

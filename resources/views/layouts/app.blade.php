@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>KINERJA</title>
+    <link rel="icon" href="https://simtpp.pontianakkota.go.id/assets/themes/admin/images/logo-kota-pontianak.png">
 </head>
 <body>
     <div id="app">
